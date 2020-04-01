@@ -1,0 +1,3 @@
+url_infojobs_1pg = "https://www.infojobs.com.br/vagas-de-emprego-analistas.aspx?Categoria=77,74,70&Campo=griddate&Orden=desc&isr=4"
+url_infojobs_2pg = "https://www.infojobs.com.br/vagas-de-emprego-analistas.aspx?Categoria=77,74,70&Page=2&Campo=griddate&Orden=desc&isr=4"
+url_infojobs_3pg = "https://www.infojobs.com.br/vagas-de-emprego-analistas.aspx?Categoria=77,74,70&Page=3&Campo=griddate&Orden=desc&isr=4"
