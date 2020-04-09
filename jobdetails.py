@@ -13,7 +13,7 @@ class WebScrapJob:
     def __init__(self, url):
         print (url)
         self.url = url
-
+		# url = "https://www.infojobs.com.br/vaga-de-desenvolvedor-python-junior-em-sao-paulo__6805056.aspx"
         self.uClient = uReq (self.url)
         self.page_html = self.uClient.read ()
         self.uClient.close ()  # fecha o pedido anterior qndo eu terminar
@@ -22,7 +22,7 @@ class WebScrapJob:
         self.page_soup = soup (self.page_html, "html.parser")
 
         # grabs each vacancy
-        self.containers = self.page_soup.findAll ("div", {"class": "element-vaga"})
+        #self.containers = self.page_soup.findAll ("div", {"class": "element-vaga"}) #NÃO EXISTE
         self.save ()
 
     def save(self):
@@ -30,68 +30,52 @@ class WebScrapJob:
         self.filename = 'jobs.csv'
         self.f = open (self.filename, "w")
 
-        headers = "vaga,empresa,area,data,cidade,estado,fonte,link\n"  # csv sao definidos pelo \n
+        headers = "vaga,empresa,salário,data,cidade,estado,link\n"  # csv sao definidos pelo \n
         self.f.write (headers)
         self.jobs ()
 
 
     def jobs(self):
-        for container in self.containers:
-            # VAGA
-            self.vaga_container = container.findAll ("div", {"class": "vaga"})
-            self.vaga = self.vaga_container[0].text.strip ()
+        #for container in self.containers:
+		# VAGA
+		self.vaga_page = page_soup.findAll ("span", {"id": "ctl00_phMasterPage_cVacancySummary_litVacancyTitle"})
+		self.vaga = self.vaga_page[0].text.strip ()
 
-            # EMPRESA
-            self.empresa_container = container.findAll ("div", {"class": "vaga-company"})
-            self.empresa = self.empresa_container[0].text.strip ()
+		# EMPRESA
+		self.empresa_page = page_soup.findAll ("a", {"id": "ctl00_phMasterPage_cVacancySummary_aCompany"})
+		self.empresa = self.empresa_page[0].text.strip ()
 
-            # AREA
-            self.area_container = container.findAll ("p", {"class": "area"})
-            self.area = self.area_container[0].text.strip ()
+		# Salário
+		self.salario_page = page_soup.findAll ("span", {"id": "ctl00_phMasterPage_cVacancySummary_litSalary"}) 
+		self.salario = self.salario_page[0].text.strip ()
 
-            # DATA
-            self.data_container = container.findAll ("span", {"class": "data"})
-            self.data = self.data_container[0].text.strip ()
-            self.data = self.data[0:5]
+		# CIDADE
+		self.cidade_page = page_soup.findAll ("span", {"id": "ctl00_phMasterPage_cVacancySummary_litLocation"})
+		self.cidade = self.cidade_page[0].text.strip () 
+		
+		# ESTADO
+		self.estado_page = page_soup.findAll ("span", {"id": "ctl00_phMasterPage_cVacancySummary_litLocation"})
+		self.estado = self.estado_page[0].text.strip ()
+		self.estado = self.estado[-3:-1]
+		
+		# self.estado = self.estado.replace ("\n", "")
 
-            # CIDADE
-            self.cidade_container = container.findAll ("p", {"class": "location2"})
-            self.cidade = self.cidade_container[0].text.strip ()
-            self.cidade = self.cidade.replace ("\n", "")
-            self.cidade = self.cidade[-24:-6]
+		# LINK
+		self.link = url
 
-            # ESTADO
-            self.estado_container = container.findAll ("p", {"class": "location2"})
-            self.estado = self.estado_container[0].text.strip ()
-            self.estado = self.estado.replace ("\n", "")
-            self.estado = self.estado[-3:-1]
+		
+		print ("Vaga: " + self.vaga)
+		print ("Empresa:" + self.empresa)
+		print ("Area: " + self.salario)
+		print ("Data: " + self.data)
+		print ("Cidade: " + self.cidade)
+		print ("Estado: " + self.estado)
+		print ("Link: " + self.link)
 
-            #  DESCRIÇÃO
-            self.atividade_container = container.findAll ("div", {"class": "vagaDesc"})
-            self.atividade = self.atividade_container[0].text.strip ()
-            self.atividade = self.atividade.replace ("\n", "")
-            # list(set(atividade.split()))  #Isto gera uma lista com as unique words mas  nesse csv não vale a pena
+		self.f.write (self.vaga + "," + self.empresa.replace (",", "|") + "," +  self.salario.replace (",", "|") + "," +  self.data + "," + self.cidade.replace (",", "|") + "," + self.estado + "," +self.link + "\n")
+		# f.write(vaga + "," + empresa.replace(",", "|") + "," + area.replace(",","|") + "," + data + "," + local.replace("-",",") + "," + atividade.replace(",", "|") + "," + link + "\n")
 
-            # LINK
-            self.link_container = container.findAll ("div", {"class": "vagaDesc"})
-            self.link = self.link_container[0].a["href"]
-
-            fonte = "INFOJOBS"
-
-            print ("Vaga: " + self.vaga)
-            print ("Empresa:" + self.empresa)
-            print ("Area: " + self.area)
-            print ("Data: " + self.data)
-            print ("Cidade: " + self.cidade)
-            print ("Estado: " + self.estado)
-            print ("Atividade: " + self.atividade)
-            print ("Link: " + self.link)
-
-            self.f.write (self.vaga + "," + self.empresa.replace (",", "|") + "," + self.area.replace (",", "|") +
-                          "," + self.data + "," + self.cidade + "," + self.estado + "," + fonte + "," + self.link + "\n")
-            # f.write(vaga + "," + empresa.replace(",", "|") + "," + area.replace(",","|") + "," + data + "," + local.replace("-",",") + "," + atividade.replace(",", "|") + "," + link + "\n")
-
-        self.f.close ()
+	self.f.close ()
 
 
 

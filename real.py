@@ -27,13 +27,10 @@ class InfoJob:
 
         self.driver.get ('https://www.infojobs.com.br/login.aspx?vurl=%2fcandidate%2f')
 
-        self.vaga = vaga  # enter username and password
-        self.username = self.driver.find_element_by_xpath ('//*[@id="ControlLogin_txtLogin"]')
-        self.username.send_keys (email)
-        self.password = self.driver.find_element_by_xpath ('//*[@id="ControlLogin_txtPwd"]')
-        self.password.send_keys (senha)
-        self.entry_button = self.driver.find_element_by_xpath ('//*[@id="ControlLogin_btnValidar"]')
-        self.entry_button.click ()
+        #self.vaga = vaga  # enter username and password
+        self.driver.find_element_by_xpath ('//*[@id="ControlLogin_txtLogin"]').send_keys (email)
+        elf.driver.find_element_by_xpath ('//*[@id="ControlLogin_txtPwd"]').send_keys (senha)
+        self.driver.find_element_by_xpath ('//*[@id="ControlLogin_btnValidar"]').click ()
 
         self.vacancy_search (vaga)
 
@@ -41,13 +38,9 @@ class InfoJob:
         print ('Vamos encontrar uma vaga')
 
         # type the vacancy ------------> either user enter or a GUI could be used
-        self.vacancy = self.driver.find_element_by_xpath (
-            '//*[@id="aspnetForm"]/div[3]/div[6]/section[1]/div/div/ol/li[1]/input')
-
-        self.vacancy.send_keys (vaga)
-        self.search = self.driver.find_element_by_xpath (
-            '//*[@id="aspnetForm"]/div[3]/div[6]/section[1]/div/div/ol/li[3]/button')
-        self.search.click ()
+        self.driver.find_element_by_xpath (         '//*[@id="aspnetForm"]/div[4]/div[6]/section[1]/div/div/ol/li[1]/input').send_keys (vaga)
+		
+        self.driver.find_element_by_xpath ('//*[@id="aspnetForm"]/div[4]/div[6]/section[1]/div/div/ol/li[3]/button').click ()
         self.filtering ()
 
         # filter by cities, level and salary ---> it shouldn't be here. A GUI might be a better option
@@ -55,13 +48,11 @@ class InfoJob:
     def filtering(self):
         try:
             # filtering by State
-            self.state = self.driver.find_element_by_link_text ('Santa Catarina')
-            self.state.click ()
+            self.driver.find_element_by_link_text ('Santa Catarina').click ()
             # PROBLEM: I can't click on the one that came by default
             time.sleep (random.uniform (1.5, 3.5))
             # filtering by salary rate
-            self.salary = self.driver.find_element_by_partial_link_text ('5.000,00')
-            self.salary.click ()
+            self.driver.find_element_by_partial_link_text ('5.000,00').click ()
 
         except:
             print ("Não deu para colocar os filtros!")
