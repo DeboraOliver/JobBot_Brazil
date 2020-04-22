@@ -2,3 +2,12 @@
 [0405/093358.269:ERROR:exception_snapshot_win.cc(98)] thread ID 9264 not found in process
 [0405/093358.465:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0405/093358.465:ERROR:exception_snapshot_win.cc(98)] thread ID 11176 not found in process
+[0417/111052.197:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0417/111052.229:ERROR:exception_snapshot_win.cc(98)] thread ID 10832 not found in process
+[0417/111052.385:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0417/111052.385:ERROR:exception_snapshot_win.cc(98)] thread ID 11520 not found in process
+[0417/112902.639:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0417/112902.699:ERROR:exception_snapshot_win.cc(98)] thread ID 9824 not found in process
+[0417/112903.008:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0417/112903.008:ERROR:exception_snapshot_win.cc(98)] thread ID 8040 not found in process
+[0421/142711.361:ERROR:crash_report_database_win.cc(580)] CreateDirectory C:\Users\DEBORA~1\AppData\Local\Temp\scoped_dir11072_32319\Crashpad: The system cannot find the path specified. (0x3)
