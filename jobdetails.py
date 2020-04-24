@@ -13,7 +13,6 @@ class WebScrapJob:
     def __init__(self, url):
         print (url)
         self.url = url
-        # url = "https://www.infojobs.com.br/vaga-de-desenvolvedor-python-junior-em-sao-paulo__6805056.aspx"
         self.uClient = uReq (self.url)
         self.page_html = self.uClient.read ()
         self.uClient.close ()  # fecha o pedido anterior qndo eu terminar
@@ -42,11 +41,17 @@ class WebScrapJob:
 
         # EMPRESA
         self.empresa_page = self.page_soup.findAll ("a", {"id": "ctl00_phMasterPage_cVacancySummary_aCompany"})
-        self.empresa = self.empresa_page[0].text.strip ()
+        if len(self.empresa_page) == 0:
+            self.empresa = "confidencial"
+        else:
+            self.empresa = self.empresa_page[0].text.strip ()
 
         # Salário
         self.salario_page = self.page_soup.findAll ("span", {"id": "ctl00_phMasterPage_cVacancySummary_litSalary"})
-        self.salario = self.salario_page[0].text.strip ()
+        if len(self.salario_page) == 0:
+            self.salario = "combinar"
+        else:
+            self.salario = self.salario_page[0].text.strip ()
 
         # CIDADE
         self.cidade_page = self.page_soup.findAll ("span", {"id": "ctl00_phMasterPage_cVacancySummary_litLocation"})
@@ -61,7 +66,7 @@ class WebScrapJob:
 
         # DATA
         self.data = datetime.datetime.now()
-
+        self.data = self.data.strftime ("%x")
         # LINK
         # self.link = url
 

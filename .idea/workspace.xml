@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68399328-46a4-4692-9f9d-582d2ab91a16" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobdetails.py" afterPath="$PROJECT_DIR$/jobdetails.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobdetails.py" afterPath="$PROJECT_DIR$/jobdetails.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/real.py" afterPath="$PROJECT_DIR$/real.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="real.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="real.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/real.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+            <state relative-caret-position="17">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="e#107#145#0" expanded="true" />
               </folding>
@@ -33,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jobdetails.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jobdetails.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobdetails.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="246">
+              <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
               <folding>
                 <element signature="e#246#288#0" expanded="true" />
               </folding>
@@ -655,22 +654,22 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../IgBot_BR/test.py" />
-    <entry file="file://$PROJECT_DIR$/jobdetails.py">
+    <entry file="file://$PROJECT_DIR$/real.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
-            <element signature="e#246#288#0" expanded="true" />
+            <element signature="e#107#145#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/real.py">
+    <entry file="file://$PROJECT_DIR$/jobdetails.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+        <state relative-caret-position="246">
+          <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
           <folding>
-            <element signature="e#107#145#0" expanded="true" />
+            <element signature="e#246#288#0" expanded="true" />
           </folding>
         </state>
       </provider>
